@@ -26,7 +26,7 @@ class _CountExampleState extends State<CountExample> {
 
   @override
   Widget build(BuildContext context) {
-    print("build");
+    print("Full Widget Re-build");
     final countProvider = Provider.of<CountProvider>(context, listen: false);
 
     return Scaffold(
@@ -39,7 +39,7 @@ class _CountExampleState extends State<CountExample> {
       ),
       body: Center(
           child: Consumer<CountProvider>(builder: (context, value, child) {
-        print("Only This Widget Builds");
+        print("Only This Widget Build");
         return Text(
           value.count.toString(),
           style: const TextStyle(fontSize: 50),
