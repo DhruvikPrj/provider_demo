@@ -17,12 +17,10 @@ class _CountExampleState extends State<CountExample> {
     super.initState();
     final countProvider =
         Provider.of<CountProvider>(context, listen: false); //Must Add
-    Timer.periodic(const Duration(seconds: 0), (timer) {
+    Timer.periodic(const Duration(seconds: 1), (timer) {
       countProvider.setCount();
     });
   }
-
-  var count = 0;
 
   @override
   Widget build(BuildContext context) {
